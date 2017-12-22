@@ -45,7 +45,7 @@
 
 #home .content {
   height: 100%;
-  background: #cd6464 url(assets/aatitlepagefond.png) no-repeat;
+  background: #cd6464 url(https://cpd-rush2017.herokuapp.com/pschiiit/images/aatitlepagefond.png) no-repeat;
   background-size: 100%;
 }
 
@@ -91,7 +91,7 @@
     position: relative;
 }
 #game .gameZone.fire {
-  background: url("assets/feu.gif") no-repeat;
+  background: url(https://cpd-rush2017.herokuapp.com/pschiiit/images/feu.gif) no-repeat;
   background-size: 100%;
 }
 
@@ -104,7 +104,12 @@
   display: none;
 }
 .bang_div{
+  visibility:none;
+}
+
+#bang_img{
   visibility: hidden;
+  position: absolute;
 }
 
 .circle {

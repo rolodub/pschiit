@@ -1,7 +1,7 @@
 // On définit nos variables
 // SI UTILISATEUR == 1 ==> FIN DE PARTIE
 var options = {
-    gravity: 2,
+    nombre_joueur: 2,
     difficulty: 1
 };
 var Difficulties = ['Facile', 'Moyen', 'Difficile'];
@@ -16,11 +16,15 @@ var inc_pression_tangage = 1;
 function myTimer() {
     pression = pression + Math.round((inc_pression_roulage+inc_pression_tangage)/2);
     $("#timing").text(pression);
+    // $('#bang_img').css("visibility","hidden");
+    // $('#game .btnContinue').hide();
     if (pression >= 100){
       $('.bang_div').css("visibility","visible");
+      $('#bang_img').css("visibility","visible");
       $('#game .btnContinue').show();
       pression = 0;
       clearInterval(timerGlobal);
+
       //envoi de la page Bang -> décrément du nombre de joueurs
     }
 }
@@ -88,17 +92,17 @@ function handleOrientation(event) {
   $('#img_2').css("visibility","hidden");
   $('#img_3').css("visibility","hidden");
 
-  if (inc_pression_roulage >= 5 || inc_pression_tangage >= 5) {
+  if (inc_pression_roulage >= 2 || inc_pression_tangage >= 2) {
     $('#img_1').css("visibility","visible");
-    $('#son_mini').get(0).play();
+    // $('#son_mini').get(0).play();
   }
   if (inc_pression_roulage >= 8 || inc_pression_tangage >= 8) {
     $('#img_2').css("visibility","visible");
-    $('#son_medium').get(0).play();
+    //$('#son_medium').get(0).play();
   }
   if (inc_pression_roulage >= 15 || inc_pression_tangage >= 15) {
     $('#img_3').css("visibility","visible");
-    $('#son_hard').get(0).play();
+    // $('#son_hard').get(0).play();
   }
 }
 });
